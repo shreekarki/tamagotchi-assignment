@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tamagotchi extends Model
 {
-    protected $fillable = ['name', 'age', 'coins', 'level','health','boredom', 'state'  ];
+    protected $fillable = ['name', 'age', 'coins', 'level','health','boredom', 'state'];
 
     public function relation()
         {
-            return $this->belongsToOne(Bookin::class);
+            return $this->hasMany(Booking::class);
         }
 }
 

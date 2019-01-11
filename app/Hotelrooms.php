@@ -10,6 +10,6 @@ class Hotelrooms extends Model
 
     public function relation()
       {
-        return $this->hasMany(Booking::class);
+        return $this->hasMany(Tamagotchi::class);
       }
 }

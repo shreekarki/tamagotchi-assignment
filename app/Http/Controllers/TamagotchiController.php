@@ -26,7 +26,6 @@ class TamagotchiController extends Controller
 
       public function update(Request $request, $id)
       {
-
           $tamagotchi = Tamagotchi::findOrFail($id);
           $tamagotchi->update($request->all());
 
