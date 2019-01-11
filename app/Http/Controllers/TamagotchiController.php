@@ -7,7 +7,7 @@ use App\Tamagotchi;
 
 class TamagotchiController extends Controller
 {
-  public function index()
+      public function index()
       {
           return Tamagotchi::all();
       }
@@ -20,7 +20,6 @@ class TamagotchiController extends Controller
 
       public function store(Request $request)
       {
-
           $tamagotchi = Tamagotchi::create($request->all());
           return response()->json($tamagotchi, 201);
       }

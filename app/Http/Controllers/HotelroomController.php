@@ -3,16 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use JWTFactory;
-use JWTAuth;
-use App\User;
 use Illuminate\Support\Facades\Auth;
 use App\Hotelrooms;
 
 
 class HotelroomController extends Controller
 {
-
          public function index()
          {
              return Hotelrooms::all();
@@ -27,19 +23,15 @@ class HotelroomController extends Controller
 
          public function store(Request $request)
          {
-              if (!$user){
+              if ($this->user){
                $hotelroom = Hotelrooms::create($request->all());
                return response()->json($hotelroom, 201);
               }
-
-              return response()->json("UNauthorized access", 403);
 
          }
 
          public function update(Request $request, $id)
          {
-
-
              $hotelroom = Hotelrooms::findOrFail($id);
              $hotelroom->update($request->all());
 
@@ -53,4 +45,5 @@ class HotelroomController extends Controller
 
              return response()->json(null, 204);
          }
+
 }

@@ -37,6 +37,6 @@ Route::group(['middleware' => 'jwt.auth'], function()
         });
 });
 
-Route::post('user/register', 'APIRegisterController@register');
-Route::post('user/login', 'APILoginController@login');
+Route::post('user/register', 'UserController@register');
+Route::post('user/login', 'UserController@login');
 

@@ -8,7 +8,7 @@ class Hotelrooms extends Model
 {
     protected $fillable = ['size', 'type'];
 
-    public function categories()
+    public function relation()
       {
         return $this->hasMany(Hotelrooms::class);
       }
