@@ -10,7 +10,7 @@ class Tamagotchi extends Model
 
     public function relation()
         {
-            return $this->belongsToOne(Hotelrooms::class);
+            return $this->belongsToOne(Bookin::class);
         }
 }
 
